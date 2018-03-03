@@ -1,0 +1,76 @@
+﻿@using CodeNight.Entities
+@using CodeNight.Models
+
+@model List<Comments>
+@{
+    User user = CurrentSession.User;
+}
+@foreach (Comments item in Model)
+{
+    if (item.Owner != null)
+    {
+        <div class="media">
+            <div class="media-left">
+                <a href="/Home/ShowProfile/@item.Owner.Id">
+                    <img class="media-object img-thumbnail" style="height:48px" src="~/Images/@item.Owner.ProfileImageFileName" alt="...">
+                </a>
+            </div>
+            <div class="media-body">
+                <div>
+                    <span class="col-md-10" id="comment_text_@item.Id" contenteditable="false">
+                        @item.CommentText
+                    </span>
+                    @if (user != null && user.Id == item.Owner.Id)
+                    {
+                        <span class="col-md-2 text-right">
+                            <button type="button" class="btn btn-warning btn-xs" data-edit-mode="false" onclick="doComment(this, 'edit_clicked', @item.Id,'#comment_text_@item.Id');">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-xs" onclick="doComment(this, 'delete_clicked', @item.Id);">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    }
+                    <div class="row">
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                        </div>
+
+                        <small class="col-md-5 text-right">
+                            <a href="/Account/ShowProfile/@item.Owner.Id"><span class="glyphicon glyphicon-user"></span> @item.Owner.Username</a> &nbsp;
+                            <span class="glyphicon glyphicon-time"></span> @item.CreatedDate
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@if (user != null)
+            {
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <input type="text" id="new_comment_text" class="form-control" placeholder="yorumunuz..">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="button" onclick="doComment(this, 'new_clicked',-1)">
+                        <span class="glyphicon glyphicon-send"></span> Gönder
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,77 @@
+﻿@using CodeNight.Models
+@using CodeNight.Entities
+@model List<Share>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+
+                    @foreach (Share share in Model)
+                    {
+                        <div class="panel panel-default post" data-share-id="@share.Id">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+
+                                        <a href="/Account/ShowProfile/@share.Owner.Id" class="post-avatar thumbnail"><img src="~/images/@share.Owner.ProfileImageFileName" alt="" /></a>
+                                        <a href="/Account/ShowProfile/@share.Owner.Id"><div class="text-center">@share.Owner.Name&nbsp;@share.Owner.Surname</div></a>
+
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="bubble">
+
+                                            <div class="pointer">
+                                                <p>@share.ShareText</p>
+                                                <img src="~/images/@share.ShareImagFileName" class="img-responsive" />
+                                            </div>
+                                            <hr />
+                                            <div class="pointer">
+                                                @if (share.ShareVideoFileName != null)
+                                                {
+                                                    <video controls="controls" class="img-responsive">
+                                                        <source src="~/Videos/@share.ShareVideoFileName" type="video/mp4" />
+                                                    </video>
+                                                }
+
+                                            </div>
+
+                                            <div class="pointer-border"></div>
+                                        </div>
+                                        <p class="post-actions">
+                                            <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal_comment" data-share-id="@share.Id">
+                                                <span class="fa fa-comment"></span> Yorumlar
+                                            </button> -
+                                            <button class="btn btn-default btn-sm" id="btn1" type="button" data-liked="false" data-share-id="@share.Id">
+                                                <span class="glyphicon glyphicon-hand-right like-hand"></span>&nbsp;
+                                                <span class="like-count">@share.LikeCount Beğen</span>
+                                            </button>
+                                        </p>
+                                        <p class="text-right"><span class="fa fa-calendar"> @share.CreatedDate.ToString("dd.MM.yy HH:mm")</span></p>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+@bootstrap.ModalPopup(id: "modal_comment", title: "Yorumlar")
+<script src="~/Scripts/comment.js"></script>
+<script src="~/Scripts/like.js"></script>

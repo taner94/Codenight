@@ -1,0 +1,77 @@
+﻿@using CodeNight
+@using CodeNight.Entities
+@using CodeNight.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CodeNight</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/ekko-lightbox.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                @if (CurrentSession.User != null)
+                {
+                    <a  href="@Url.Action("Index", "Home")"><span class="fa fa-user"></span>Ana Sayfa</a>
+                }
+                <ul class="nav navbar-nav navbar-right">
+                    @if (CurrentSession.User != null)
+                    {
+                        <li class="dropdown right">
+                            <a class="dropdown-toggle count-info" data-toggle="dropdown" href="/Home/ShowFootballerProfile" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img class="img-circle" style="height:24px;" src="~/Images/@CurrentSession.User.ProfileImageFileName">
+                                @CurrentSession.User.Name
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("MyProfile", "Account")"><span class="fa fa-user"></span>Profili Göster</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="@Url.Action("EditProfile", "Account")"><span class="fa fa-sign-out"></span>Profili Düzenle</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="@Url.Action("Logout", "Account")"><span class="fa fa-sign-out"></span>Çıkış</a></li>
+                            </ul>
+                        </li>
+                    }
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (CurrentSession.User == null)
+                    {
+                        <li><a href="@Url.Action("Login", "Account")"><span class="fa fa-sign-in"></span>Giriş Yap</a></li>
+                        <li><a href="@Url.Action("Register", "Account")"><span class="fa fa-sign-out"></span>Kayıt Ol</a></li>
+
+                    }
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    @RenderBody()
+
+
+    <script>
+
+    </script>
+</body>
+</html>

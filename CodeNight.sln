@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNight", "CodeNight\CodeNight.csproj", "{BDCA4B47-6D5E-4FBD-9806-A7E9E95AB005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNight.Entities", "CodeNight.Entities\CodeNight.Entities.csproj", "{703FA0C4-E7E1-4C50-8323-DFFD2A761152}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNight.DataAccessLayer", "CodeNight.DataAccessLayer\CodeNight.DataAccessLayer.csproj", "{D7CD9506-4866-4B5D-89C2-EC382FB17DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNight.BusinessLayer", "CodeNight.BusinessLayer\CodeNight.BusinessLayer.csproj", "{91812EA9-5AD9-4CC4-A8DB-B884526DEB74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{8B21C1EA-9D9C-457B-A64F-A7B43A951ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNightApi", "CodeNightApi\CodeNightApi.csproj", "{F5F464B8-E2F0-4E91-B91D-68B9307CCD77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeNight.Common", "Common\CodeNight.Common.csproj", "{E8905A31-01BB-43B8-A990-99FC4C6A3C16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDCA4B47-6D5E-4FBD-9806-A7E9E95AB005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCA4B47-6D5E-4FBD-9806-A7E9E95AB005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCA4B47-6D5E-4FBD-9806-A7E9E95AB005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCA4B47-6D5E-4FBD-9806-A7E9E95AB005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703FA0C4-E7E1-4C50-8323-DFFD2A761152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703FA0C4-E7E1-4C50-8323-DFFD2A761152}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703FA0C4-E7E1-4C50-8323-DFFD2A761152}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703FA0C4-E7E1-4C50-8323-DFFD2A761152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CD9506-4866-4B5D-89C2-EC382FB17DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CD9506-4866-4B5D-89C2-EC382FB17DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CD9506-4866-4B5D-89C2-EC382FB17DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CD9506-4866-4B5D-89C2-EC382FB17DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91812EA9-5AD9-4CC4-A8DB-B884526DEB74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91812EA9-5AD9-4CC4-A8DB-B884526DEB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91812EA9-5AD9-4CC4-A8DB-B884526DEB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91812EA9-5AD9-4CC4-A8DB-B884526DEB74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B21C1EA-9D9C-457B-A64F-A7B43A951ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B21C1EA-9D9C-457B-A64F-A7B43A951ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B21C1EA-9D9C-457B-A64F-A7B43A951ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B21C1EA-9D9C-457B-A64F-A7B43A951ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F464B8-E2F0-4E91-B91D-68B9307CCD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F464B8-E2F0-4E91-B91D-68B9307CCD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F464B8-E2F0-4E91-B91D-68B9307CCD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F464B8-E2F0-4E91-B91D-68B9307CCD77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8905A31-01BB-43B8-A990-99FC4C6A3C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8905A31-01BB-43B8-A990-99FC4C6A3C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8905A31-01BB-43B8-A990-99FC4C6A3C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8905A31-01BB-43B8-A990-99FC4C6A3C16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

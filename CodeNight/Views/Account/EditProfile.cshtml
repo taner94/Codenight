@@ -1,0 +1,90 @@
+﻿@using CodeNight.Models
+@using CodeNight.Entities
+@model User
+@{
+    ViewBag.Title = "Profil Düzenle";
+}
+<link href="~/Content/informations.css" rel="stylesheet" />
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+<div class="container">
+   
+    <div class="row">
+
+        @using (Html.BeginForm("EditProfile", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-horizontal">
+                <legend><b style="color:black">Kişisel Bilgilerini Düzenle ve Kaydet</b></legend>
+                <div class="col-md-4">
+                    <img src="~/images/@Model.ProfileImageFileName" class="img-responsive" />
+                    @Html.HiddenFor(model => model.ProfileImageFileName)
+                    <br /><br />
+                    <input type="file" name="ProfileImage" id="ProfileImage" class="form-control" /><br />
+                    <span class="glyphicon glyphicon-info-sign">&nbsp;</span>
+                    <span><i>Lütfen jpg, jpeg ya da png formatı kullanın.</i></span>
+                </div>
+
+                <div class="col-md-5">
+                    @Html.ValidationSummary(false)
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><span class="glyphicon glyphicon-user"></span> <b style="color:black">AD:</b></label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><span class="glyphicon glyphicon-user"></span> <b style="color:black">SOYAD:</b></label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><span class="glyphicon glyphicon-user"></span> <b style="color:black">K. ADI:</b></label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><span class="glyphicon glyphicon-lock"></span> <b style="color:black">ŞİFRE:</b></label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><span class="glyphicon glyphicon-envelope"></span> <b style="color:black">E-MAİL:</b></label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><span class="glyphicon glyphicon-earphone"></span> <b style="color:black">TELEFON NO:</b></label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                                                          
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"><span class="glyphicon glyphicon-time"></span><b style="color:black"> DOĞUM TARİHİ:</b></label>
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8">
+                        <button type="submit" value="Kaydet" class="btn btn-success fa fa-save">Kaydet</button>
+                        <button href="@Url.Action("ShowFootballerProfile","Home")" value="İptal" class="btn btn-danger fa fa-times"><b style="color:black"> İptal</b></button>
+                        @*@Html.ActionLink("İptal", "ShowFootballerProfile", "Home" , null, new { @class = "btn btn-default" })*@
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+.
+
+
+
